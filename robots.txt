@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://calcul-prime-precarite.fr/sitemap.xml
