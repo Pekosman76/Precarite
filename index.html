@@ -117,6 +117,52 @@
                     </div>
                 </div>
             </section>
+            <!-- ✅ Bloc éditorial (important pour AdSense) -->
+            <section class="bg-white p-6 rounded-2xl shadow-soft border border-stone-100">
+            <div class="space-y-4">
+                <h2 class="text-xl md:text-2xl font-bold text-stone-900">
+                Simulateur de prime de précarité CDD (indemnité de fin de contrat)
+                </h2>
+
+                <p class="text-sm text-stone-600 leading-relaxed">
+                Cette page vous aide à <strong>estimer votre prime de précarité</strong> à la fin d’un CDD, en appliquant la règle générale :
+                <strong>10 %</strong> (taux légal) ou <strong>6 %</strong> (si un accord/convention le prévoit).
+                Le résultat est une <strong>estimation brute</strong> basée sur les informations saisies.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                <div class="bg-stone-50 border border-stone-100 rounded-xl p-4">
+                    <p class="text-xs uppercase tracking-wider font-semibold text-stone-500">Ce que vous obtenez</p>
+                    <p class="mt-2 text-sm text-stone-700">Une estimation immédiate + le détail du calcul (base, durée, taux).</p>
+                </div>
+                <div class="bg-stone-50 border border-stone-100 rounded-xl p-4">
+                    <p class="text-xs uppercase tracking-wider font-semibold text-stone-500">À vérifier</p>
+                    <p class="mt-2 text-sm text-stone-700">Conventions collectives, primes intégrées, cas d’exclusion (CDI, faute grave, etc.).</p>
+                </div>
+                <div class="bg-stone-50 border border-stone-100 rounded-xl p-4">
+                    <p class="text-xs uppercase tracking-wider font-semibold text-stone-500">Sources</p>
+                    <p class="mt-2 text-sm text-stone-700">
+                    Références officielles en bas de page (Service-Public, Code du travail).
+                    </p>
+                </div>
+                </div>
+
+                <div class="flex flex-wrap gap-2 pt-1">
+                <a href="#simulateur" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-stone-900 text-white text-sm font-medium hover:opacity-90 transition">
+                    Lancer le calcul
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </a>
+                <a href="#definition" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-stone-200 text-stone-700 text-sm font-medium hover:bg-stone-50 transition">
+                    Comprendre la prime
+                </a>
+                <a href="#sources" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-stone-200 text-stone-700 text-sm font-medium hover:bg-stone-50 transition">
+                    Sources officielles
+                </a>
+                </div>
+            </div>
+</section>
 
             <!-- Calculateur Grid -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
@@ -240,6 +286,38 @@
                 </div>
             </div>
 
+            <!-- ✅ Méthode de calcul + limites (renforce le côté "informatif") -->
+            <section class="bg-white p-6 rounded-2xl shadow-soft border border-stone-100">
+            <h2 class="text-lg font-bold text-stone-900 mb-3">Comment est calculée la prime ?</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                <p class="text-sm text-stone-600 leading-relaxed">
+                    La prime de précarité correspond en général à <strong>10 %</strong> de la <strong>rémunération brute totale</strong> versée pendant le CDD.
+                    Un taux <strong>réduit à 6 %</strong> peut s’appliquer si un accord collectif le prévoit (avec contreparties, souvent formation).
+                </p>
+                <ul class="text-sm text-stone-600 list-disc pl-5 space-y-1">
+                    <li>Base : total des salaires bruts perçus pendant le CDD</li>
+                    <li>Calcul : base × taux (10 % ou 6 %)</li>
+                    <li>Résultat : prime <strong>brute</strong> (avant cotisations / impôt)</li>
+                </ul>
+                </div>
+
+                <div class="space-y-2">
+                <p class="text-sm text-stone-600 leading-relaxed">
+                    <strong>Attention :</strong> certains cas excluent la prime (ex : enchaînement en CDI, faute grave, contrats particuliers).
+                    Les conventions collectives peuvent aussi prévoir des règles plus favorables.
+                </p>
+
+                <div class="bg-stone-50 border border-stone-100 rounded-xl p-4">
+                    <p class="text-xs uppercase tracking-wider font-semibold text-stone-500 mb-2">Conseil rapide</p>
+                    <p class="text-sm text-stone-700">
+                    Comparez toujours avec votre <strong>solde de tout compte</strong> et la convention collective applicable.
+                    </p>
+                </div>
+                </div>
+            </div>
+</section>
             <!-- Sections Info -->
             <section class="space-y-12 py-8 border-t border-stone-100">
                 <h2 class="text-3xl font-bold text-stone-900 text-center">Comprendre la prime de précarité CDD</h2>
@@ -323,7 +401,9 @@
                         Ce site ne collecte ni ne conserve directement de données personnelles.<br />
                         Toutefois, des services tiers tels que Google AdSense peuvent utiliser des cookies ou des identifiants afin de diffuser des annonces personnalisées ou non.<br />
                         Vous pouvez en savoir plus sur l’utilisation des données par Google ici : 
-                        <span class="text-[#8da191] ml-1">https://policies.google.com/technologies/ads</span>
+                        <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" class="text-[#8da191] hover:underline ml-1">
+                                https://policies.google.com/technologies/ads
+                        </a>
                     </p>
                 </div>
             </div>
