@@ -79,6 +79,9 @@
   window.CookieConsentManager = {
     openBanner: function () {
       openBanner(true);
+    },
+    closeBanner: function () {
+      removeBanner();
     }
   };
 
