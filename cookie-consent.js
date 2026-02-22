@@ -1,7 +1,6 @@
 (function () {
   const CONSENT_KEY = 'cookieConsent';
   const ADSENSE_SRC = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-  let bannerEl = null;
 
   function getConsent() {
     try {
@@ -15,7 +14,7 @@
     try {
       localStorage.setItem(CONSENT_KEY, value);
     } catch (error) {
-      // localStorage peut être bloqué
+      // localStorage indisponible : on n'interrompt pas l'UI
     }
   }
 
@@ -23,8 +22,13 @@
     const consent = getConsent();
     const client = document.querySelector('meta[name="adsense-client"]')?.content;
 
-    if (consent !== 'granted' || !client) return;
-    if (document.querySelector('script[data-adsense-script="true"]')) return;
+    if (consent !== 'granted' || !client) {
+      return;
+    }
+
+    if (document.querySelector('script[data-adsense-script="true"]')) {
+      return;
+    }
 
     const script = document.createElement('script');
     script.async = true;
@@ -34,27 +38,16 @@
     document.head.appendChild(script);
   }
 
-  function removeBanner() {
-    if (bannerEl) {
-      bannerEl.remove();
-      bannerEl = null;
-    }
-  }
+  function createBanner() {
+    const banner = document.createElement('aside');
+    banner.setAttribute('aria-label', 'Bandeau cookies');
+    banner.setAttribute('role', 'dialog');
+    banner.className = 'fixed bottom-4 left-4 right-4 z-50 max-w-3xl mx-auto bg-white border border-stone-200 rounded-xl shadow-lg p-4 text-sm';
 
-  function openBanner(force) {
-    if (bannerEl) return;
-    const consent = getConsent();
-    if (!force && (consent === 'granted' || consent === 'denied')) return;
-
-    bannerEl = document.createElement('aside');
-    bannerEl.setAttribute('aria-label', 'Bandeau cookies');
-    bannerEl.setAttribute('role', 'dialog');
-    bannerEl.className = 'fixed bottom-4 left-4 right-4 z-50 max-w-3xl mx-auto bg-white border border-stone-200 rounded-xl shadow-lg p-4 text-sm';
-
-    bannerEl.innerHTML = `
+    banner.innerHTML = `
       <p class="text-stone-700 mb-3">
         Ce site utilise des cookies à des fins de mesure d’audience et de publicité (Google AdSense). Vous pouvez accepter ou refuser.
-        <a href="./politique-confidentialite.html" class="underline text-stone-900 font-medium focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8da191]">En savoir plus</a>
+        <a href="/politique-confidentialite.html" class="underline text-stone-900 font-medium focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8da191]">En savoir plus</a>
       </p>
       <div class="flex flex-wrap gap-2 justify-end">
         <button type="button" data-consent="denied" aria-label="Refuser les cookies" class="px-3 py-2 rounded-lg border border-stone-300 text-stone-700 hover:bg-stone-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8da191]">Refuser</button>
@@ -62,38 +55,25 @@
       </div>
     `;
 
-    bannerEl.querySelectorAll('button[data-consent]').forEach((button) => {
+    banner.querySelectorAll('button[data-consent]').forEach((button) => {
       button.addEventListener('click', function () {
         const value = this.getAttribute('data-consent');
         if (!value) return;
         setConsent(value);
-        removeBanner();
+        banner.remove();
         loadAdSenseIfAllowed();
       });
     });
 
     const appRoot = document.querySelector('.min-h-screen') || document.body;
-    appRoot.appendChild(bannerEl);
+    appRoot.appendChild(banner);
   }
 
-  window.CookieConsentManager = {
-    openBanner: function () {
-      openBanner(true);
-    },
-    closeBanner: function () {
-      removeBanner();
-    }
-  };
-
-  document.addEventListener('click', function (event) {
-    const trigger = event.target.closest('[data-open-cookie-settings]');
-    if (!trigger) return;
-    event.preventDefault();
-    openBanner(true);
-  });
-
   document.addEventListener('DOMContentLoaded', function () {
-    openBanner(false);
+    const consent = getConsent();
+    if (consent !== 'granted' && consent !== 'denied') {
+      createBanner();
+    }
     loadAdSenseIfAllowed();
   });
 })();
