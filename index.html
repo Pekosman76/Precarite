@@ -273,6 +273,62 @@
                 </div>
             </div>
 
+            <section class="bg-white p-6 rounded-2xl shadow-soft border border-stone-100" aria-label="Sommaire rapide">
+                <h2 class="text-lg font-bold text-stone-900 mb-3">Sommaire rapide</h2>
+                <div class="flex flex-wrap gap-2 text-sm">
+                    <a href="#transparence-methode" class="px-3 py-1.5 rounded-full bg-stone-100 hover:bg-stone-200">Transparence & méthode</a>
+                    <a href="#exemples-detailles" class="px-3 py-1.5 rounded-full bg-stone-100 hover:bg-stone-200">Exemples détaillés</a>
+                    <a href="#verifier-solde" class="px-3 py-1.5 rounded-full bg-stone-100 hover:bg-stone-200">Vérifier le solde de tout compte</a>
+                    <a href="#guides-utiles" class="px-3 py-1.5 rounded-full bg-stone-100 hover:bg-stone-200">Guides utiles</a>
+                    <a href="#faq-list" class="px-3 py-1.5 rounded-full bg-stone-100 hover:bg-stone-200">FAQ</a>
+                </div>
+            </section>
+
+            <section id="transparence-methode" class="bg-white p-8 rounded-2xl shadow-soft border border-stone-100 space-y-4">
+                <h2 class="text-2xl font-bold text-stone-900">Transparence & méthode</h2>
+                <p class="text-sm text-stone-600 leading-relaxed">Ce site est un outil gratuit de simulation et de pédagogie. L'objectif est d'aider les salariés en CDD à comprendre, en règle générale, comment est estimée l'indemnité de fin de contrat. Le simulateur ne demande pas de création de compte et fonctionne directement dans votre navigateur. Il produit une estimation brute afin d'éclairer votre lecture du bulletin de paie et du solde de tout compte.</p>
+                <p class="text-sm text-stone-600 leading-relaxed">La méthode appliquée est volontairement simple et transparente : base de rémunération brute totale saisie par l'utilisateur, puis application d'un taux de 10 % (règle générale) ou 6 % lorsqu'un accord collectif ou une convention le prévoit. Le simulateur affiche aussi des messages d'alerte sur des cas fréquents d'exclusion, sans remplacer la vérification de vos documents contractuels.</p>
+                <p class="text-sm text-stone-600 leading-relaxed">Cette estimation comporte des limites : certains éléments de rémunération peuvent être discutés selon votre situation, et plusieurs cas particuliers existent (CDD d'usage, saisonnier, rupture anticipée, proposition de CDI, etc.). En pratique, votre convention collective, votre contrat et vos bulletins restent les références prioritaires. En cas de doute, rapprochez-vous d'un professionnel du droit social ou d'un interlocuteur RH.</p>
+                <p class="text-xs text-stone-500">Mise à jour éditoriale : février 2026 · <a href="./a-propos.html" class="underline hover:text-stone-700">À propos</a> · <a href="./contact.html" class="underline hover:text-stone-700">Contact</a></p>
+            </section>
+
+            <section id="exemples-detailles" class="bg-white p-8 rounded-2xl shadow-soft border border-stone-100 space-y-6">
+                <h2 class="text-2xl font-bold text-stone-900">Exemples détaillés</h2>
+                <p class="text-sm text-stone-600 leading-relaxed">Les scénarios ci-dessous sont des exemples pédagogiques. Le simulateur calcule une estimation brute à partir des montants saisis, mais ne remplace pas l'analyse de votre convention collective ni des documents de fin de contrat.</p>
+                <div class="grid md:grid-cols-2 gap-4 text-sm">
+                    <article class="border border-stone-100 rounded-xl p-4 bg-stone-50"><h3 class="font-semibold text-stone-900 mb-2">1) Cas standard à 10 %</h3><p class="text-stone-600">CDD de 4 mois à 2 000 € brut/mois. Base = 8 000 €. Prime estimative = 8 000 × 10 % = <strong>800 € brut</strong>.</p></article>
+                    <article class="border border-stone-100 rounded-xl p-4 bg-stone-50"><h3 class="font-semibold text-stone-900 mb-2">2) Cas à 6 % selon accord</h3><p class="text-stone-600">CDD de 6 mois à 1 900 € brut/mois avec taux conventionnel à 6 %. Base = 11 400 €. Prime estimative = <strong>684 € brut</strong>.</p></article>
+                    <article class="border border-stone-100 rounded-xl p-4 bg-stone-50"><h3 class="font-semibold text-stone-900 mb-2">3) Cas avec primes incluses</h3><p class="text-stone-600">Total brut perçu sur la période (salaires + primes intégrées) = 14 250 €. À 10 %, estimation = <strong>1 425 € brut</strong>. Vérifiez quels éléments entrent dans la base selon vos textes applicables.</p></article>
+                    <article class="border border-stone-100 rounded-xl p-4 bg-stone-50"><h3 class="font-semibold text-stone-900 mb-2">4) Temps partiel</h3><p class="text-stone-600">CDD à temps partiel 5 mois, 1 050 € brut/mois. Base = 5 250 €. À 10 %, estimation = <strong>525 € brut</strong>. Le principe reste identique : on part du brut réellement versé.</p></article>
+                    <article class="border border-stone-100 rounded-xl p-4 bg-stone-50 md:col-span-2"><h3 class="font-semibold text-stone-900 mb-2">5) CDD saisonnier / d'usage (prudence)</h3><p class="text-stone-600">Pour certains contrats (saisonnier, d'usage, etc.), l'indemnité n'est pas due en règle générale, sauf dispositions plus favorables. Le simulateur peut afficher un avertissement, mais la conclusion dépend de votre cadre exact.</p></article>
+                </div>
+            </section>
+
+            <section id="verifier-solde" class="bg-stone-50 p-8 rounded-2xl border border-stone-100">
+                <h2 class="text-xl font-bold mb-4">Comment vérifier sur votre solde de tout compte</h2>
+                <ol class="list-decimal pl-5 space-y-2 text-sm text-stone-700">
+                    <li>Repérez la ligne dédiée à l'indemnité de fin de contrat / prime de précarité.</li>
+                    <li>Vérifiez la base brute totale retenue sur la période du CDD.</li>
+                    <li>Contrôlez le taux appliqué (10 % en règle générale, 6 % si accord applicable).</li>
+                    <li>Confrontez le montant annoncé avec vos bulletins de paie et votre contrat.</li>
+                    <li>Conservez vos documents (contrat, avenants, bulletins, solde de tout compte signé/non signé).</li>
+                </ol>
+            </section>
+
+            <section class="bg-amber-50 border-l-4 border-amber-400 p-5 rounded-r-xl">
+                <h2 class="font-semibold text-amber-900">Ce simulateur ne remplace pas un conseil juridique</h2>
+                <p class="text-sm text-amber-800 mt-2">Le résultat fourni est informatif. Selon votre situation, des règles spécifiques peuvent s'appliquer. En cas d'incertitude, faites vérifier votre dossier par un professionnel compétent.</p>
+            </section>
+
+            <section id="guides-utiles" class="space-y-4">
+                <h2 class="text-2xl font-bold">Guides utiles</h2>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <a class="bg-white p-5 rounded-xl border border-stone-100 shadow-soft hover:border-stone-300" href="./guide-prime-precarite.html"><h3 class="font-semibold mb-2">Guide complet prime de précarité</h3><p class="text-sm text-stone-600">Définition, conditions, calcul, erreurs fréquentes et FAQ courte.</p></a>
+                    <a class="bg-white p-5 rounded-xl border border-stone-100 shadow-soft hover:border-stone-300" href="./exceptions-prime-precarite.html"><h3 class="font-semibold mb-2">Exceptions et cas de non-versement</h3><p class="text-sm text-stone-600">Les principaux cas à vérifier et les bons réflexes avant contestation.</p></a>
+                    <a class="bg-white p-5 rounded-xl border border-stone-100 shadow-soft hover:border-stone-300" href="./solde-de-tout-compte.html"><h3 class="font-semibold mb-2">Lire son solde de tout compte</h3><p class="text-sm text-stone-600">Checklist des lignes, pièces à conserver et démarches utiles.</p></a>
+                </div>
+            </section>
+
             <!-- ✅ Méthode de calcul + limites (renforce le côté "informatif") -->
             <section class="bg-white p-6 rounded-2xl shadow-soft border border-stone-100">
             <h2 class="text-lg font-bold text-stone-900 mb-3">Comment est calculée la prime ?</h2>
@@ -354,7 +410,7 @@
                     </article>
                     <article id="exemples" class="space-y-3">
                         <h3 class="text-xl font-bold text-stone-800 flex items-center gap-2"><span class="w-1.5 h-6 bg-[#8da191] rounded-full"></span>8. Exemples concrets de calcul</h3>
-                        <p class="text-stone-600 leading-relaxed text-sm">Pour un CDD de 3 mois à 2000 € brut : 6000 € cumulés. Prime à 10 % = 600 €. Pour un CDD de 6 mois à 1800 € brut avec un taux réduit à 6 % : 10 800 € cumulés. Prime = 648 €. Utilisez notre simulateur pour un calcul précis.</p>
+                        <p class="text-stone-600 leading-relaxed text-sm">Exemple 10 % : 2 000 € × 4 mois = 8 000 €, prime estimée 800 €. Exemple 6 % : 1 900 € × 6 mois = 11 400 €, prime 684 €. Temps partiel : 1 050 € × 5 mois = 5 250 €, prime 525 €. Avec primes intégrées, la base dépend des éléments retenus selon votre situation. Pour les CDD saisonniers ou d'usage, l'indemnité peut ne pas être due en règle générale.</p>
                     </article>
                 </div>
             </section>
