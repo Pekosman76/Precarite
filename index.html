@@ -11,10 +11,8 @@
         
   
     <meta name="description" content="Simulateur gratuit pour calculer votre prime de précarité (indemnité de fin de contrat CDD). Calculez votre prime de fin de CDD à 10% ou 6% simplement et rapidement.">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2367869499715237"
-     crossorigin="anonymous"></script>
-    
-    
+    <meta name="adsense-client" content="ca-pub-2367869499715237">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -154,7 +152,7 @@
 </section>
 
             <!-- Calculateur Grid -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            <div id="simulateur" class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                 <!-- Formulaire -->
                 <div class="bg-white p-6 rounded-2xl shadow-soft border border-stone-100 space-y-6">
                     <h2 class="text-xl font-bold text-stone-900 border-b border-stone-50 pb-4">Calculer ma prime</h2>
@@ -385,19 +383,25 @@
                     <div><p>Hébergement : OVHcloud SAS – 2 rue Kellermann, 59100 Roubaix – France.</p></div>
                     <div class="md:text-right"><p class="font-semibold text-white mb-2">Outil gratuit d'estimation</p><p>Site informatif indépendant.</p></div>
                 </div>
-                <div class="pt-8 border-t border-stone-800">
+                <nav aria-label="Liens légaux" class="pt-4 border-t border-stone-800 flex flex-wrap gap-4 text-sm">
+                    <a href="/mentions-legales.html" class="text-stone-200 hover:text-white hover:underline">Mentions légales</a>
+                    <a href="/politique-confidentialite.html" class="text-stone-200 hover:text-white hover:underline">Politique de confidentialité</a>
+                    <a href="/contact.html" class="text-stone-200 hover:text-white hover:underline">Contact</a>
+                    <a href="/a-propos.html" class="text-stone-200 hover:text-white hover:underline">À propos</a>
+                </nav>
+                <div class="pt-4 border-t border-stone-800">
                     <p class="mb-4">
                         Ce site ne collecte ni ne conserve directement de données personnelles.<br />
                         Toutefois, des services tiers tels que Google AdSense peuvent utiliser des cookies ou des identifiants afin de diffuser des annonces personnalisées ou non.<br />
-                        Vous pouvez en savoir plus sur l’utilisation des données par Google ici : 
-                        <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" class="text-[#8da191] hover:underline ml-1">
-                                https://policies.google.com/technologies/ads
-                        </a>
+                        Vous pouvez en savoir plus sur l’utilisation des données par Google ici :
+                        <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" class="text-[#8da191] hover:underline ml-1">https://policies.google.com/technologies/ads</a>
                     </p>
+                    <p><a href="#simulateur" class="text-stone-200 hover:text-white hover:underline">Retour au simulateur</a></p>
                 </div>
             </div>
         </footer>
     </div>
     <script src="app.js" defer></script>
+    <script src="cookie-consent.js" defer></script>
 </body>
 </html>
