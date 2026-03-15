@@ -1,158 +1,59 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
-    <link rel="manifest" href="./site.webmanifest">
-    <script src="https://cdn.tailwindcss.com"></script>
-        
-  
-    <meta name="description" content="Simulateur gratuit pour calculer votre prime de précarité (indemnité de fin de contrat CDD). Calculez votre prime de fin de CDD à 10% ou 6% simplement et rapidement.">
-    <meta name="adsense-client" content="ca-pub-2367869499715237">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-  body {
-        font-family: 'Inter', system-ui, -apple-system, sans-serif;
-        background-color: #faf9f6;
-        scroll-behavior: smooth;
-        color: #333333;
-      }
-      .sage-bg { background-color: #8da191; }
-      .sage-text { color: #8da191; }
-      .shadow-soft { box-shadow: 0 4px 15px -3px rgba(0, 0, 0, 0.04), 0 2px 6px -2px rgba(0, 0, 0, 0.02); }
-      .transition-all { transition: all 0.3s ease; }
-    
-      /* ✅ FIX : cache le bandeau/breadcrumb injecté tout en haut (le ">" + trait) */
-      body > :not(.min-h-screen):not(script):not(style):not(link) {
-        display: none !important;
-        height: 0 !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        border: 0 !important;
-      }
-      body::before, body::after {
-        content: none !important;
-        display: none !important;
-      }
-</style>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "La prime de précarité est-elle imposable ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Oui, elle est soumise à l'impôt sur le revenu comme un salaire classique."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Est-elle due en CDD saisonnier ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Non, sauf si un accord collectif ou une clause du contrat le prévoit explicitement."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Est-elle versée en cas de CDI après CDD ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Non, si le salarié enchaîne immédiatement sur un CDI (sans interruption) sur le même poste ou un poste similaire."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Quand est-elle payée ?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Elle doit être versée à la fin du contrat, en même temps que le dernier salaire, et figurer sur le solde de tout compte."
-          }
-        }
-      ]
-    }
-    </script>
-<script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
-    "react/": "https://esm.sh/react@^19.2.3/"
-  }
-}
-</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calcul prime de précarité CDD : simulateur + méthode + cas pratiques</title>
+  <meta name="description" content="Estimez votre prime de précarité CDD avec un simulateur simple, puis vérifiez les règles, exclusions et cas pratiques à partir de sources officielles.">
+  <link rel="canonical" href="https://calculprimeprecarite.fr/">
+  <meta property="og:title" content="Calcul prime de précarité CDD : simulateur fiable et ressources officielles">
+  <meta property="og:description" content="Un simulateur pédagogique et des guides complets pour comprendre l'indemnité de fin de contrat.">
+  <meta property="og:url" content="https://calculprimeprecarite.fr/">
+  <meta property="og:type" content="website">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Calcul Prime Précarité","url":"https://calculprimeprecarite.fr","contactPoint":{"@type":"ContactPoint","contactType":"customer support","email":"contact@calculprimeprecarite.fr"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Calcul Prime Précarité","url":"https://calculprimeprecarite.fr"}</script>
 </head>
-<body class="text-stone-800">
-    <div class="min-h-screen flex flex-col">
-    <header class="bg-white border-b border-stone-100 py-8 px-4 shadow-soft">
-      <div class="max-w-4xl mx-auto text-center">
-        <h1 class="text-2xl md:text-3xl font-bold text-stone-900 tracking-tight">
-          Prime de précarité CDD – <span class="text-[#8da191]">Calculateur simple et gratuit</span>
-        </h1>
-        <p class="mt-2 text-sm text-stone-500">
-          Simulateur de prime de précarité 2026, gratuit et simple à utiliser.
-        </p>
-      </div>
-    </header>
+<body class="bg-stone-50 text-stone-800">
+  <header class="bg-white border-b border-stone-200">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-3">
+      <a href="./index.html" class="font-bold text-lg">calculprimeprecarite.fr</a>
+      <nav class="text-sm flex flex-wrap gap-4" aria-label="Menu principal">
+        <a href="./index.html#simulateur" class="hover:underline">Simulateur</a>
+        <a href="./methodologie-calcul-prime-precarite.html" class="hover:underline">Méthodologie</a>
+        <a href="./faq-prime-precarite.html" class="hover:underline">FAQ</a>
+        <a href="./cas-pratiques-prime-precarite.html" class="hover:underline">Cas pratiques</a>
+        <a href="./glossaire-cdd-prime-precarite.html" class="hover:underline">Glossaire</a>
+        <a href="./guide-contestation-prime-precarite.html" class="hover:underline">Guides</a>
+        <a href="./a-propos.html" class="hover:underline">À propos</a>
+      </nav>
+    </div>
+  </header>
 
-        <main class="flex-grow max-w-4xl mx-auto w-full px-4 py-8 space-y-12">
-            <!-- Bandeau Avertissement -->
-            <section class="bg-amber-50 border-l-4 border-amber-300 p-4 rounded-r-md">
-                <div class="flex">
-                    <div class="flex-shrink-0">
-                        <svg class="h-5 w-5 text-amber-400" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
-                        </svg>
-                    </div>
-                    <div class="ml-3">
-                        <p class="text-sm text-amber-800">
-                            Ce simulateur fournit une estimation basée sur le régime général du droit du travail. Les conventions collectives peuvent prévoir des dispositions plus favorables pour votre <strong>indemnité de fin de contrat</strong>.
-                        </p>
-                    </div>
-                </div>
-            </section>
-            <!-- ✅ Bloc éditorial (important pour AdSense) -->
-            <section class="bg-white p-6 rounded-2xl shadow-soft border border-stone-100">
-            <div class="space-y-4">
-                <h2 class="text-xl md:text-2xl font-bold text-stone-900">
-                Simulateur de prime de précarité CDD (indemnité de fin de contrat)
-                </h2>
+  <main class="max-w-5xl mx-auto px-4 py-8 space-y-8">
+    <section class="bg-white border border-stone-200 rounded-xl p-6">
+      <h1 class="text-3xl font-bold mb-3">Simulateur de prime de précarité (CDD)</h1>
+      <p class="text-stone-700">Estimez votre prime de précarité (indemnité de fin de contrat) à partir de votre rémunération brute et de la durée de votre CDD. Cette estimation applique la règle générale (10 %) ou un taux réduit (6 %) lorsqu'un accord le prévoit. Vous obtenez un résultat détaillé (base → taux → montant), mais ce site ne remplace pas un conseil juridique personnalisé.</p>
+    </section>
 
-                <p class="text-sm text-stone-600 leading-relaxed">
-                Cette page vous aide à <strong>estimer votre prime de précarité</strong> à la fin d’un CDD, en appliquant la règle générale :
-                <strong>10 %</strong> (taux légal) ou <strong>6 %</strong> (si un accord/convention le prévoit).
-                Le résultat est une <strong>estimation brute</strong> basée sur les informations saisies.
-                </p>
+    <section class="grid md:grid-cols-2 gap-4">
+      <article class="bg-white rounded-xl border border-stone-200 p-5">
+        <h2 class="font-semibold text-lg mb-2">Ce que vous obtenez / ce que vous n'obtenez pas</h2>
+        <p class="text-sm text-stone-700"><strong>Vous obtenez :</strong> une estimation brute, une aide de lecture du solde de tout compte, des rappels sur les cas d'exclusion fréquents. <strong>Vous n'obtenez pas :</strong> une validation juridique opposable, ni une interprétation complète de votre convention collective.</p>
+        <p class="mt-3 text-sm"><a class="underline" href="./methodologie-calcul-prime-precarite.html">Méthodologie du calcul</a> · <a class="underline" href="./cas-pratiques-prime-precarite.html">Cas pratiques</a></p>
+      </article>
+      <article class="bg-emerald-50 rounded-xl border border-emerald-200 p-5">
+        <h2 class="font-semibold text-lg mb-2">Sources principales</h2>
+        <ul class="list-disc pl-5 text-sm space-y-1">
+          <li><a class="underline" href="https://www.service-public.gouv.fr/particuliers/vosdroits/F40" target="_blank" rel="noopener">Service-Public</a></li>
+          <li><a class="underline" href="https://code.travail.gouv.fr/fiche-service-public/contrat-a-duree-determinee-cdd" target="_blank" rel="noopener">Code du travail numérique</a></li>
+          <li><a class="underline" href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006901212" target="_blank" rel="noopener">Code du travail (Légifrance)</a></li>
+        </ul>
+        <p class="text-xs mt-2">Dernière mise à jour : mars 2026 · Rédigé par : Équipe éditoriale (placeholder) · Relu par : Référent conformité (placeholder).</p>
+      </article>
+    </section>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                <div class="bg-stone-50 border border-stone-100 rounded-xl p-4">
-                    <p class="text-xs uppercase tracking-wider font-semibold text-stone-500">Ce que vous obtenez</p>
-                    <p class="mt-2 text-sm text-stone-700">Une estimation immédiate + le détail du calcul (base, durée, taux).</p>
-                </div>
-                <div class="bg-stone-50 border border-stone-100 rounded-xl p-4">
-                    <p class="text-xs uppercase tracking-wider font-semibold text-stone-500">À vérifier</p>
-                    <p class="mt-2 text-sm text-stone-700">Conventions collectives, primes intégrées, cas d’exclusion (CDI, faute grave, etc.).</p>
-                </div>
-                <div class="bg-stone-50 border border-stone-100 rounded-xl p-4">
-                    <p class="text-xs uppercase tracking-wider font-semibold text-stone-500">Sources</p>
-                    <p class="mt-2 text-sm text-stone-700">
-                    Références officielles en bas de page (Service-Public, Code du travail).
-                    </p>
-                </div>
-                </div>
-            </div>
-</section>
-
-            <!-- Calculateur Grid -->
-            <div id="simulateur" class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+    <div id="simulateur" class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                 <!-- Formulaire -->
                 <div class="bg-white p-6 rounded-2xl shadow-soft border border-stone-100 space-y-6">
                     <h2 class="text-xl font-bold text-stone-900 border-b border-stone-50 pb-4">Calculer ma prime</h2>
@@ -273,204 +174,63 @@
                 </div>
             </div>
 
-            <section class="bg-white p-6 rounded-2xl shadow-soft border border-stone-100" aria-label="Sommaire rapide">
-                <h2 class="text-lg font-bold text-stone-900 mb-3">Sommaire rapide</h2>
-                <div class="flex flex-wrap gap-2 text-sm">
-                    <a href="#transparence-methode" class="px-3 py-1.5 rounded-full bg-stone-100 hover:bg-stone-200">Transparence & méthode</a>
-                    <a href="#exemples-detailles" class="px-3 py-1.5 rounded-full bg-stone-100 hover:bg-stone-200">Exemples détaillés</a>
-                    <a href="#verifier-solde" class="px-3 py-1.5 rounded-full bg-stone-100 hover:bg-stone-200">Vérifier le solde de tout compte</a>
-                    <a href="#guides-utiles" class="px-3 py-1.5 rounded-full bg-stone-100 hover:bg-stone-200">Guides utiles</a>
-                    <a href="#faq-list" class="px-3 py-1.5 rounded-full bg-stone-100 hover:bg-stone-200">FAQ</a>
-                </div>
-            </section>
+            
 
-            <section id="transparence-methode" class="bg-white p-8 rounded-2xl shadow-soft border border-stone-100 space-y-4">
-                <h2 class="text-2xl font-bold text-stone-900">Transparence & méthode</h2>
-                <p class="text-sm text-stone-600 leading-relaxed">Ce site est un outil gratuit de simulation et de pédagogie. L'objectif est d'aider les salariés en CDD à comprendre, en règle générale, comment est estimée l'indemnité de fin de contrat. Le simulateur ne demande pas de création de compte et fonctionne directement dans votre navigateur. Il produit une estimation brute afin d'éclairer votre lecture du bulletin de paie et du solde de tout compte.</p>
-                <p class="text-sm text-stone-600 leading-relaxed">La méthode appliquée est volontairement simple et transparente : base de rémunération brute totale saisie par l'utilisateur, puis application d'un taux de 10 % (règle générale) ou 6 % lorsqu'un accord collectif ou une convention le prévoit. Le simulateur affiche aussi des messages d'alerte sur des cas fréquents d'exclusion, sans remplacer la vérification de vos documents contractuels.</p>
-                <p class="text-sm text-stone-600 leading-relaxed">Cette estimation comporte des limites : certains éléments de rémunération peuvent être discutés selon votre situation, et plusieurs cas particuliers existent (CDD d'usage, saisonnier, rupture anticipée, proposition de CDI, etc.). En pratique, votre convention collective, votre contrat et vos bulletins restent les références prioritaires. En cas de doute, rapprochez-vous d'un professionnel du droit social ou d'un interlocuteur RH.</p>
-                <p class="text-xs text-stone-500">Mise à jour éditoriale : février 2026 · <a href="./a-propos.html" class="underline hover:text-stone-700">À propos</a> · <a href="./contact.html" class="underline hover:text-stone-700">Contact</a></p>
-            </section>
+    <section class="bg-white rounded-xl border border-stone-200 p-6">
+      <h2 class="text-2xl font-semibold mb-4">Comprendre la base brute : inclus / exclus (résumé)</h2>
+      <table class="w-full text-sm border-collapse">
+        <thead><tr class="bg-stone-100"><th class="border p-2 text-left">Élément</th><th class="border p-2">Tendance</th><th class="border p-2 text-left">Point d'attention</th></tr></thead>
+        <tbody>
+          <tr><td class="border p-2">Salaire brut contractuel</td><td class="border p-2">Inclus</td><td class="border p-2">Base principale de calcul.</td></tr>
+          <tr><td class="border p-2">Primes liées au travail</td><td class="border p-2">Souvent incluses</td><td class="border p-2">Vérifier convention collective et bulletins.</td></tr>
+          <tr><td class="border p-2">Remboursements de frais</td><td class="border p-2">Exclus</td><td class="border p-2">Ne constituent pas du salaire.</td></tr>
+          <tr><td class="border p-2">Indemnités spécifiques</td><td class="border p-2">Variable</td><td class="border p-2">Analyse au cas par cas.</td></tr>
+        </tbody>
+      </table>
+      <p class="text-xs mt-3">Sources : Service-Public, Code du travail numérique, Légifrance. Dernière mise à jour : mars 2026. Rédigé par : Équipe éditoriale. Relu par : Référent conformité.</p>
+    </section>
 
-            <section id="exemples-detailles" class="bg-white p-8 rounded-2xl shadow-soft border border-stone-100 space-y-6">
-                <h2 class="text-2xl font-bold text-stone-900">Exemples détaillés</h2>
-                <p class="text-sm text-stone-600 leading-relaxed">Les scénarios ci-dessous sont des exemples pédagogiques. Le simulateur calcule une estimation brute à partir des montants saisis, mais ne remplace pas l'analyse de votre convention collective ni des documents de fin de contrat.</p>
-                <div class="grid md:grid-cols-2 gap-4 text-sm">
-                    <article class="border border-stone-100 rounded-xl p-4 bg-stone-50"><h3 class="font-semibold text-stone-900 mb-2">1) Cas standard à 10 %</h3><p class="text-stone-600">CDD de 4 mois à 2 000 € brut/mois. Base = 8 000 €. Prime estimative = 8 000 × 10 % = <strong>800 € brut</strong>.</p></article>
-                    <article class="border border-stone-100 rounded-xl p-4 bg-stone-50"><h3 class="font-semibold text-stone-900 mb-2">2) Cas à 6 % selon accord</h3><p class="text-stone-600">CDD de 6 mois à 1 900 € brut/mois avec taux conventionnel à 6 %. Base = 11 400 €. Prime estimative = <strong>684 € brut</strong>.</p></article>
-                    <article class="border border-stone-100 rounded-xl p-4 bg-stone-50"><h3 class="font-semibold text-stone-900 mb-2">3) Cas avec primes incluses</h3><p class="text-stone-600">Total brut perçu sur la période (salaires + primes intégrées) = 14 250 €. À 10 %, estimation = <strong>1 425 € brut</strong>. Vérifiez quels éléments entrent dans la base selon vos textes applicables.</p></article>
-                    <article class="border border-stone-100 rounded-xl p-4 bg-stone-50"><h3 class="font-semibold text-stone-900 mb-2">4) Temps partiel</h3><p class="text-stone-600">CDD à temps partiel 5 mois, 1 050 € brut/mois. Base = 5 250 €. À 10 %, estimation = <strong>525 € brut</strong>. Le principe reste identique : on part du brut réellement versé.</p></article>
-                    <article class="border border-stone-100 rounded-xl p-4 bg-stone-50 md:col-span-2"><h3 class="font-semibold text-stone-900 mb-2">5) CDD saisonnier / d'usage (prudence)</h3><p class="text-stone-600">Pour certains contrats (saisonnier, d'usage, etc.), l'indemnité n'est pas due en règle générale, sauf dispositions plus favorables. Le simulateur peut afficher un avertissement, mais la conclusion dépend de votre cadre exact.</p></article>
-                </div>
-            </section>
+    <section class="bg-white rounded-xl border border-stone-200 p-6">
+      <h2 class="text-2xl font-semibold mb-4">Cas d'exclusion (résumé)</h2>
+      <div class="grid md:grid-cols-2 gap-4 text-sm">
+        <div class="border rounded p-3"><strong>Fin normale du CDD</strong><br>Prime généralement due.</div>
+        <div class="border rounded p-3"><strong>Refus d'un CDI équivalent</strong><br>Prime généralement non due.</div>
+        <div class="border rounded p-3"><strong>Rupture anticipée par le salarié</strong><br>Prime généralement non due.</div>
+        <div class="border rounded p-3"><strong>CDD saisonnier / usage / alternance</strong><br>Souvent exclu, sauf règle plus favorable.</div>
+      </div>
+      <p class="mt-3"><a class="underline" href="./exceptions-prime-precarite.html">Voir la page Exceptions détaillée</a></p>
+      <p class="text-xs mt-2">Sources : Service-Public, Code du travail numérique, Légifrance. Dernière mise à jour : mars 2026. Rédigé par : Équipe éditoriale. Relu par : Référent conformité.</p>
+    </section>
 
-            <section id="verifier-solde" class="bg-stone-50 p-8 rounded-2xl border border-stone-100">
-                <h2 class="text-xl font-bold mb-4">Comment vérifier sur votre solde de tout compte</h2>
-                <ol class="list-decimal pl-5 space-y-2 text-sm text-stone-700">
-                    <li>Repérez la ligne dédiée à l'indemnité de fin de contrat / prime de précarité.</li>
-                    <li>Vérifiez la base brute totale retenue sur la période du CDD.</li>
-                    <li>Contrôlez le taux appliqué (10 % en règle générale, 6 % si accord applicable).</li>
-                    <li>Confrontez le montant annoncé avec vos bulletins de paie et votre contrat.</li>
-                    <li>Conservez vos documents (contrat, avenants, bulletins, solde de tout compte signé/non signé).</li>
-                </ol>
-            </section>
+    <section class="bg-white rounded-xl border border-stone-200 p-6">
+      <h2 class="text-2xl font-semibold mb-4">FAQ rapide (extrait)</h2>
+      <div class="space-y-3 text-sm">
+        <p><strong>La prime est-elle imposable ?</strong> Oui, comme un salaire.</p>
+        <p><strong>Prime en cas de CDI proposé ?</strong> En général non si le CDI est équivalent et immédiat.</p>
+        <p><strong>CDD saisonnier ?</strong> Souvent non, sauf dispositions plus favorables.</p>
+        <p><strong>Versement quand ?</strong> À la fin du contrat, avec le solde de tout compte.</p>
+        <p><strong>Que faire en cas d'écart ?</strong> Demander le détail RH, puis contester par écrit si besoin.</p>
+      </div>
+      <p class="mt-4"><a class="underline" href="./faq-prime-precarite.html">Voir la FAQ complète</a></p>
+    </section>
 
-            <section class="bg-amber-50 border-l-4 border-amber-400 p-5 rounded-r-xl">
-                <h2 class="font-semibold text-amber-900">Ce simulateur ne remplace pas un conseil juridique</h2>
-                <p class="text-sm text-amber-800 mt-2">Le résultat fourni est informatif. Selon votre situation, des règles spécifiques peuvent s'appliquer. En cas d'incertitude, faites vérifier votre dossier par un professionnel compétent.</p>
-            </section>
+    <section class="bg-white rounded-xl border border-stone-200 p-6">
+      <h2 class="text-xl font-semibold mb-2">Lire aussi</h2>
+      <ul class="list-disc pl-5 text-sm space-y-1">
+        <li><a class="underline" href="./methodologie-calcul-prime-precarite.html">Méthodologie détaillée du calcul</a></li>
+        <li><a class="underline" href="./guide-contestation-prime-precarite.html">Guide de contestation</a></li>
+        <li><a class="underline" href="./solde-de-tout-compte.html">Comment lire le solde de tout compte</a></li>
+        <li><a class="underline" href="./sources-officielles.html">Bibliographie officielle</a></li>
+      </ul>
+    </section>
+  </main>
 
-            <section id="guides-utiles" class="space-y-4">
-                <h2 class="text-2xl font-bold">Guides utiles</h2>
-                <p class="text-sm text-stone-500">Cliquez sur une carte pour ouvrir le guide détaillé.</p>
-                <div class="grid md:grid-cols-3 gap-4">
-                    <a class="group bg-white p-5 rounded-xl border border-stone-200 shadow-soft hover:border-[#8da191] hover:shadow-md hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8da191] transition-all cursor-pointer" href="./guide-prime-precarite.html" aria-label="Ouvrir le guide complet prime de précarité">
-                        <h3 class="font-semibold mb-2 text-stone-900 group-hover:text-[#6f8474]">Guide complet prime de précarité</h3>
-                        <p class="text-sm text-stone-600">Définition, conditions, calcul, erreurs fréquentes et FAQ courte.</p>
-                        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#6f8474]">Lire le guide<span aria-hidden="true">→</span></span>
-                    </a>
-                    <a class="group bg-white p-5 rounded-xl border border-stone-200 shadow-soft hover:border-[#8da191] hover:shadow-md hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8da191] transition-all cursor-pointer" href="./exceptions-prime-precarite.html" aria-label="Ouvrir le guide des exceptions et cas de non-versement">
-                        <h3 class="font-semibold mb-2 text-stone-900 group-hover:text-[#6f8474]">Exceptions et cas de non-versement</h3>
-                        <p class="text-sm text-stone-600">Les principaux cas à vérifier et les bons réflexes avant contestation.</p>
-                        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#6f8474]">Voir les exceptions<span aria-hidden="true">→</span></span>
-                    </a>
-                    <a class="group bg-white p-5 rounded-xl border border-stone-200 shadow-soft hover:border-[#8da191] hover:shadow-md hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8da191] transition-all cursor-pointer" href="./solde-de-tout-compte.html" aria-label="Ouvrir le guide pour lire son solde de tout compte">
-                        <h3 class="font-semibold mb-2 text-stone-900 group-hover:text-[#6f8474]">Lire son solde de tout compte</h3>
-                        <p class="text-sm text-stone-600">Checklist des lignes, pièces à conserver et démarches utiles.</p>
-                        <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#6f8474]">Consulter la checklist<span aria-hidden="true">→</span></span>
-                    </a>
-                </div>
-            </section>
-
-            <!-- ✅ Méthode de calcul + limites (renforce le côté "informatif") -->
-            <section class="bg-white p-6 rounded-2xl shadow-soft border border-stone-100">
-            <h2 class="text-lg font-bold text-stone-900 mb-3">Comment est calculée la prime ?</h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="space-y-2">
-                <p class="text-sm text-stone-600 leading-relaxed">
-                    La prime de précarité correspond en général à <strong>10 %</strong> de la <strong>rémunération brute totale</strong> versée pendant le CDD.
-                    Un taux <strong>réduit à 6 %</strong> peut s’appliquer si un accord collectif le prévoit (avec contreparties, souvent formation).
-                </p>
-                <ul class="text-sm text-stone-600 list-disc pl-5 space-y-1">
-                    <li>Base : total des salaires bruts perçus pendant le CDD</li>
-                    <li>Calcul : base × taux (10 % ou 6 %)</li>
-                    <li>Résultat : prime <strong>brute</strong> (avant cotisations / impôt)</li>
-                </ul>
-                </div>
-
-                <div class="space-y-2">
-                <p class="text-sm text-stone-600 leading-relaxed">
-                    <strong>Attention :</strong> certains cas excluent la prime (ex : enchaînement en CDI, faute grave, contrats particuliers).
-                    Les conventions collectives peuvent aussi prévoir des règles plus favorables.
-                </p>
-
-                <div class="bg-stone-50 border border-stone-100 rounded-xl p-4">
-                    <p class="text-xs uppercase tracking-wider font-semibold text-stone-500 mb-2">Conseil rapide</p>
-                    <p class="text-sm text-stone-700">
-                    Comparez toujours avec votre <strong>solde de tout compte</strong> et la convention collective applicable.
-                    </p>
-                </div>
-                </div>
-            </div>
-</section>
-            <!-- Sections Info -->
-            <section class="space-y-12 py-8 border-t border-stone-100">
-                <h2 class="text-3xl font-bold text-stone-900 text-center">Comprendre la prime de précarité CDD</h2>
-                
-                <nav class="bg-stone-50 p-6 rounded-2xl border border-stone-100 max-w-2xl mx-auto shadow-sm">
-                    <p class="font-bold text-stone-800 mb-4 uppercase text-xs tracking-widest text-center">Sections informatives</p>
-                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-8 text-sm">
-                        <li class="text-stone-600 flex items-center gap-2"><span class="w-1 h-1 bg-[#8da191] rounded-full"></span>1. Qu'est-ce que la prime de précarité ?</li>
-                        <li class="text-stone-600 flex items-center gap-2"><span class="w-1 h-1 bg-[#8da191] rounded-full"></span>2. Pourquoi existe-t-elle ?</li>
-                        <li class="text-stone-600 flex items-center gap-2"><span class="w-1 h-1 bg-[#8da191] rounded-full"></span>3. Dans quels cas est-elle due ?</li>
-                        <li class="text-stone-600 flex items-center gap-2"><span class="w-1 h-1 bg-[#8da191] rounded-full"></span>4. Dans quels cas n'est-elle pas versée ?</li>
-                        <li class="text-stone-600 flex items-center gap-2"><span class="w-1 h-1 bg-[#8da191] rounded-full"></span>5. Différence entre taux 10 % et 6 %</li>
-                        <li class="text-stone-600 flex items-center gap-2"><span class="w-1 h-1 bg-[#8da191] rounded-full"></span>6. Saisonnier et contrats pro</li>
-                        <li class="text-stone-600 flex items-center gap-2"><span class="w-1 h-1 bg-[#8da191] rounded-full"></span>7. Prime de précarité et impôts</li>
-                        <li class="text-stone-600 flex items-center gap-2"><span class="w-1 h-1 bg-[#8da191] rounded-full"></span>8. Exemples concrets de calcul</li>
-                    </ul>
-                </nav>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
-                    <article id="definition" class="space-y-3">
-                        <h3 class="text-xl font-bold text-stone-800 flex items-center gap-2"><span class="w-1.5 h-6 bg-[#8da191] rounded-full"></span>1. Qu'est-ce que la prime de précarité ?</h3>
-                        <p class="text-stone-600 leading-relaxed text-sm">Officiellement appelée « <strong>indemnité de fin de contrat</strong> », la prime de précarité est un complément de salaire versé à un employé à l'issue d'un contrat à durée déterminée (CDD). Cette <strong>prime de fin de CDD</strong> vise à compenser l'instabilité liée à ce type de contrat temporaire.</p>
-                    </article>
-                    <article id="raison" class="space-y-3">
-                        <h3 class="text-xl font-bold text-stone-800 flex items-center gap-2"><span class="w-1.5 h-6 bg-[#8da191] rounded-full"></span>2. Pourquoi existe-t-elle ?</h3>
-                        <p class="text-stone-600 leading-relaxed text-sm">En droit du travail français, le contrat à durée indéterminée (CDI) est la norme. Le CDD est une exception qui place le salarié dans une situation de "précarité". La prime est là pour rééquilibrer cette situation financièrement au moment du départ de l'entreprise.</p>
-                    </article>
-                    <article id="quand" class="space-y-3">
-                        <h3 class="text-xl font-bold text-stone-800 flex items-center gap-2"><span class="w-1.5 h-6 bg-[#8da191] rounded-full"></span>3. Dans quels cas est-elle due ?</h3>
-                        <p class="text-stone-600 leading-relaxed text-sm">Elle est due dès lors que le CDD arrive à son terme normal et qu'il n'est pas immédiatement suivi d'un CDI dans la même entreprise. Elle s'applique à la majorité des CDD classiques (accroissement d'activité, remplacement de salarié).</p>
-                    </article>
-                    <article id="exclusions" class="space-y-3">
-                        <h3 class="text-xl font-bold text-stone-800 flex items-center gap-2"><span class="w-1.5 h-6 bg-[#8da191] rounded-full"></span>4. Dans quels cas n'est-elle pas versée ?</h3>
-                        <p class="text-stone-600 leading-relaxed text-sm">Les exclusions principales sont : rupture anticipée par le salarié, licenciement pour faute grave, refus d'un CDI proposé, CDD d'usage, contrats aidés (CUI), et CDD conclus avec des étudiants pendant leurs vacances scolaires.</p>
-                    </article>
-                    <article id="taux" class="space-y-3">
-                        <h3 class="text-xl font-bold text-stone-800 flex items-center gap-2"><span class="w-1.5 h-6 bg-[#8da191] rounded-full"></span>5. Différence entre taux 10 % et 6 %</h3>
-                        <p class="text-stone-600 leading-relaxed text-sm">Le <strong>calcul prime de précarité 10 %</strong> est la règle légale. Toutefois, une convention ou un accord de branche peut prévoir de ramener ce taux à 6 % minimum, à condition qu'en contrepartie, l'employeur facilite l'accès à la formation professionnelle pour le salarié.</p>
-                    </article>
-                    <article id="contrats" class="space-y-3">
-                        <h3 class="text-xl font-bold text-stone-800 flex items-center gap-2"><span class="w-1.5 h-6 bg-[#8da191] rounded-full"></span>6. Saisonnier et contrats pro</h3>
-                        <p class="text-stone-600 leading-relaxed text-sm">Le CDD saisonnier, le contrat d'apprentissage et le contrat de professionnalisation sont des régimes dérogatoires. Par défaut, la loi ne prévoit pas de prime pour ces contrats, sauf si la convention collective de l'entreprise est plus favorable au salarié.</p>
-                    </article>
-                    <article id="impots" class="space-y-3">
-                        <h3 class="text-xl font-bold text-stone-800 flex items-center gap-2"><span class="w-1.5 h-6 bg-[#8da191] rounded-full"></span>7. Prime de précarité et impôts</h3>
-                        <p class="text-stone-600 leading-relaxed text-sm">L'indemnité de fin de contrat est considérée comme un complément de salaire. Elle est donc intégralement soumise à l'impôt sur le revenu et aux cotisations sociales (CSG, CRDS). On parle alors de <strong>prime de précarité brut</strong> qui sera net après déductions.</p>
-                    </article>
-                    <article id="exemples" class="space-y-3">
-                        <h3 class="text-xl font-bold text-stone-800 flex items-center gap-2"><span class="w-1.5 h-6 bg-[#8da191] rounded-full"></span>8. Exemples concrets de calcul</h3>
-                        <p class="text-stone-600 leading-relaxed text-sm">Exemple 10 % : 2 000 € × 4 mois = 8 000 €, prime estimée 800 €. Exemple 6 % : 1 900 € × 6 mois = 11 400 €, prime 684 €. Temps partiel : 1 050 € × 5 mois = 5 250 €, prime 525 €. Avec primes intégrées, la base dépend des éléments retenus selon votre situation. Pour les CDD saisonniers ou d'usage, l'indemnité peut ne pas être due en règle générale.</p>
-                    </article>
-                </div>
-            </section>
-
-            <!-- FAQ -->
-            <section class="bg-white p-8 rounded-2xl shadow-sm border border-stone-200">
-                <h2 class="text-2xl font-bold mb-6">Questions fréquentes (FAQ)</h2>
-                <div id="faq-list" class="divide-y divide-stone-100">
-                    <!-- Généré par app.js -->
-                </div>
-            </section>
-
-            <!-- Sources -->
-            <section class="bg-stone-50 p-8 rounded-2xl border border-stone-100">
-                <h2 class="text-xl font-bold mb-4">Sources officielles</h2>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="https://www.service-public.gouv.fr/particuliers/vosdroits/F803" target="_blank" rel="noopener noreferrer" class="text-[#8da191] hover:underline flex items-center gap-2"><span>Service-Public : Indemnité de fin de contrat (prime de précarité)</span><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a></li>
-                    <li><a href="https://code.travail.gouv.fr/contribution/2098-dans-le-cadre-dun-cdd-quel-est-le-montant-de-lindemnite-de-fin-de-contrat" target="_blank" rel="noopener noreferrer" class="text-[#8da191] hover:underline flex items-center gap-2"><span>Code du travail : Montant de l'indemnité de fin de contrat</span><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg></a></li>
-                </ul>
-            </section>
-        </main>
-
-        <footer class="bg-stone-900 text-stone-400 py-12 px-4 mt-auto">
-            <div class="max-w-4xl mx-auto space-y-8 text-sm leading-relaxed">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div><p>Hébergement : OVHcloud SAS – 2 rue Kellermann, 59100 Roubaix – France.</p></div>
-                    <div class="md:text-right"><p class="font-semibold text-white mb-2">Outil gratuit d'estimation</p><p>Site informatif indépendant.</p></div>
-                </div>
-                <nav aria-label="Liens légaux" class="pt-4 border-t border-stone-800 flex flex-wrap gap-4 text-sm">
-                    <a href="./mentions-legales.html" class="text-stone-200 hover:text-white hover:underline">Mentions légales</a>
-                    <a href="./politique-confidentialite.html" class="text-stone-200 hover:text-white hover:underline">Politique de confidentialité</a>
-                    <a href="./contact.html" class="text-stone-200 hover:text-white hover:underline">Contact</a>
-                    <a href="./a-propos.html" class="text-stone-200 hover:text-white hover:underline">À propos</a>
-                </nav>
-                <div class="pt-4 border-t border-stone-800">
-                    <p class="mb-4">
-                        Ce site ne collecte ni ne conserve directement de données personnelles.<br />
-                        Toutefois, des services tiers tels que Google AdSense peuvent utiliser des cookies ou des identifiants afin de diffuser des annonces personnalisées ou non.<br />
-                        Vous pouvez en savoir plus sur l’utilisation des données par Google ici :
-                        <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" class="text-[#8da191] hover:underline ml-1">https://policies.google.com/technologies/ads</a>
-                    </p>
-                    <p><a href="#simulateur" class="text-stone-200 hover:text-white hover:underline">Retour au simulateur</a></p>
-                </div>
-            </div>
-        </footer>
+  <footer class="bg-stone-900 text-stone-200">
+    <div class="max-w-6xl mx-auto px-4 py-8 text-sm space-y-2">
+      <p>Site pédagogique indépendant. Ce site ne remplace pas un conseil juridique.</p>
+      <p><a href="./mentions-legales.html" class="underline">Mentions légales</a> · <a href="./politique-confidentialite.html" class="underline">Politique de confidentialité</a> · <a href="./politique-editoriale.html" class="underline">Politique éditoriale</a> · <a href="./contact.html" class="underline">Contact</a></p>
     </div>
-    <script src="app.js" defer></script>
-    <script src="cookie-consent.js" defer></script>
-</body>
-</html>
+  </footer>
+  <script src="app.js" defer></script>
+  <script src="cookie-consent.js" defer></script>
+</body></html>
