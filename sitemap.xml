@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://calcul-prime-precarite.fr/</loc>
-    <lastmod>2024-03-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://calculprimeprecarite.fr/</loc><lastmod>2026-03-15</lastmod></url>
+  <url><loc>https://calculprimeprecarite.fr/guide-prime-precarite.html</loc><lastmod>2026-03-15</lastmod></url>
+  <url><loc>https://calculprimeprecarite.fr/exceptions-prime-precarite.html</loc><lastmod>2026-03-15</lastmod></url>
+  <url><loc>https://calculprimeprecarite.fr/solde-de-tout-compte.html</loc><lastmod>2026-03-15</lastmod></url>
+  <url><loc>https://calculprimeprecarite.fr/faq-prime-precarite.html</loc><lastmod>2026-03-15</lastmod></url>
+  <url><loc>https://calculprimeprecarite.fr/methodologie-calcul-prime-precarite.html</loc><lastmod>2026-03-15</lastmod></url>
+  <url><loc>https://calculprimeprecarite.fr/cas-pratiques-prime-precarite.html</loc><lastmod>2026-03-15</lastmod></url>
+  <url><loc>https://calculprimeprecarite.fr/glossaire-cdd-prime-precarite.html</loc><lastmod>2026-03-15</lastmod></url>
+  <url><loc>https://calculprimeprecarite.fr/guide-contestation-prime-precarite.html</loc><lastmod>2026-03-15</lastmod></url>
+  <url><loc>https://calculprimeprecarite.fr/a-propos.html</loc><lastmod>2026-03-15</lastmod></url>
+  <url><loc>https://calculprimeprecarite.fr/sources-officielles.html</loc><lastmod>2026-03-15</lastmod></url>
+  <url><loc>https://calculprimeprecarite.fr/politique-editoriale.html</loc><lastmod>2026-03-15</lastmod></url>
+  <url><loc>https://calculprimeprecarite.fr/mentions-legales.html</loc><lastmod>2026-03-15</lastmod></url>
+  <url><loc>https://calculprimeprecarite.fr/politique-confidentialite.html</loc><lastmod>2026-03-15</lastmod></url>
+  <url><loc>https://calculprimeprecarite.fr/contact.html</loc><lastmod>2026-03-15</lastmod></url>
 </urlset>
